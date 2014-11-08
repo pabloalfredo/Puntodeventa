@@ -14,10 +14,12 @@ import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JDesktopPane;
+import javax.swing.JTextField;
 
 public class frmPrincipal {
 
 	private JFrame frame;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -106,5 +108,10 @@ public class frmPrincipal {
 		JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBounds(73, 184, 301, -68);
 		frame.getContentPane().add(desktopPane);
+		
+		textField = new JTextField();
+		textField.setBounds(316, 126, 86, 20);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
 	}
 }
