@@ -21,6 +21,7 @@ import javax.swing.BoxLayout;
 public class frmPrincipal {
 
 	private JFrame frame;
+	static String tipoUsuario;
 
 	/**
 	 * Launch the application.
@@ -29,7 +30,7 @@ public class frmPrincipal {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frmPrincipal window = new frmPrincipal();
+					frmPrincipal window = new frmPrincipal(tipoUsuario);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +42,7 @@ public class frmPrincipal {
 	/**
 	 * Create the application.
 	 */
-	public frmPrincipal() {
+	public frmPrincipal(String tipo) {
 		initialize();
 	}
 
