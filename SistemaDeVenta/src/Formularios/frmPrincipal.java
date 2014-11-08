@@ -89,7 +89,7 @@ public class frmPrincipal {
 		btnFacturar.setVerticalAlignment(SwingConstants.TOP);
 		btnFacturar.setHorizontalAlignment(SwingConstants.LEFT);
 		btnFacturar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnFacturar.setIcon(new ImageIcon("C:\\Users\\vladimir\\Desktop\\1415496836_698568-icon-56-document-text-48.png"));
+		btnFacturar.setIcon(new ImageIcon("C:\\Users\\vladimir\\git\\ProjectoPuntoVenta\\SistemaDeVenta\\src\\Recurso\\1415496836_698568-icon-56-document-text-48.png"));
 		toolBar.add(btnFacturar);
 		
 		JButton btnInventario = new JButton("Inventario");
