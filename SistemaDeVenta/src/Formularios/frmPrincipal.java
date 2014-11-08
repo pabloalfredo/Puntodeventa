@@ -99,7 +99,7 @@ public class frmPrincipal {
 		btnDevolucion.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		toolBar.add(btnDevolucion);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Reportes");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
