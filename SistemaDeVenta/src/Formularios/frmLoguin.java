@@ -16,6 +16,8 @@ import javax.swing.GroupLayout.Alignment;
 import java.awt.Window.Type;
 import java.awt.Color;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class frmLoguin {
 
@@ -72,6 +74,10 @@ public class frmLoguin {
 		lblContrasena.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnAceptar.setToolTipText("Hacer clic para ingresar");
 		btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		
@@ -86,6 +92,8 @@ public class frmLoguin {
 		
 		txtpass = new JPasswordField();
 		txtpass.setToolTipText("Ingrese su Contrasena");
+		
+		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
