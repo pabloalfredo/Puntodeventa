@@ -51,6 +51,7 @@ public class frmLoguin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.getContentPane().setBackground(new Color(0, 153, 153));
 		frame.setBackground(SystemColor.inactiveCaptionText);
 		frame.setType(Type.UTILITY);
