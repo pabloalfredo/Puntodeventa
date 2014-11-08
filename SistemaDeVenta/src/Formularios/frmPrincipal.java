@@ -17,6 +17,8 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.BoxLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class frmPrincipal {
 
@@ -98,6 +100,10 @@ public class frmPrincipal {
 		toolBar.add(btnDevolucion);
 		
 		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		toolBar.add(btnNewButton);
 		
 		JSeparator separator_1 = new JSeparator();
