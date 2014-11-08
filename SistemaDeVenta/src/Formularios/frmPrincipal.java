@@ -110,7 +110,7 @@ public class frmPrincipal {
 		frame.getContentPane().add(desktopPane);
 		
 		textField = new JTextField();
-		textField.setBounds(316, 126, 86, 20);
+		textField.setBounds(271, 127, 86, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 	}
