@@ -70,6 +70,13 @@ public class frmPrincipal {
 		menuBar.add(mnConsultas);
 		
 		JMenuItem mntmE = new JMenuItem("Producto");
+		mntmE.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmProducto Producto = new frmProducto();
+				Producto.setVisible(true);
+				
+			}
+		});
 		mnConsultas.add(mntmE);
 		
 		JMenu menu = new JMenu("");
