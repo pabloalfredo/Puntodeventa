@@ -88,7 +88,7 @@ public class frmPrincipal {
 		btnFacturar.setToolTipText("Facturar");
 		btnFacturar.setVerticalAlignment(SwingConstants.TOP);
 		btnFacturar.setHorizontalAlignment(SwingConstants.LEFT);
-		btnFacturar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnFacturar.setFont(new Font("Arial", Font.BOLD, 14));
 		btnFacturar.setIcon(new ImageIcon(frmPrincipal.class.getResource("/Recurso/1415496836_698568-icon-56-document-text-48.png")));
 		toolBar.add(btnFacturar);
 		
