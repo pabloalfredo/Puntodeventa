@@ -52,7 +52,7 @@ public class frmLoguin {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(0, 153, 153));
-		frame.setBackground(new Color(0, 153, 153));
+		frame.setBackground(SystemColor.inactiveCaptionText);
 		frame.setType(Type.UTILITY);
 		frame.getContentPane().setFont(new Font("Tahoma", Font.BOLD, 12));
 		frame.setBounds(100, 100, 375, 210);
@@ -71,16 +71,20 @@ public class frmLoguin {
 		lblContrasena.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setToolTipText("Hacer clic para ingresar");
 		btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setToolTipText("Hacer clic para cancelar");
 		btnCancelar.setBackground(SystemColor.activeCaption);
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		
 		txtUsuario = new JTextField();
+		txtUsuario.setToolTipText("Ingrese su Nombre de usuario");
 		txtUsuario.setColumns(10);
 		
 		txtpass = new JPasswordField();
+		txtpass.setToolTipText("Ingrese su Contrasena");
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
