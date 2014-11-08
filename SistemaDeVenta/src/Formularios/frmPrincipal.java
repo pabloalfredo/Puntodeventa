@@ -19,6 +19,7 @@ import java.awt.Color;
 import javax.swing.BoxLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.ScrollPane;
 
 public class frmPrincipal {
 
@@ -44,6 +45,7 @@ public class frmPrincipal {
 	 * Create the application.
 	 */
 	public frmPrincipal() {
+		
 		initialize();
 	}
 
@@ -88,20 +90,23 @@ public class frmPrincipal {
 		btnFacturar.setToolTipText("Facturar");
 		btnFacturar.setVerticalAlignment(SwingConstants.TOP);
 		btnFacturar.setHorizontalAlignment(SwingConstants.LEFT);
-		btnFacturar.setFont(new Font("Arial", Font.BOLD, 14));
+		btnFacturar.setFont(new Font("Arial", Font.BOLD, 16));
 		btnFacturar.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/1415496836_698568-icon-56-document-text-48.png")));
 		toolBar.add(btnFacturar);
 		
 		JButton btnInventario = new JButton("Inventario");
 		btnInventario.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/inventario.png")));
-		btnInventario.setFont(new Font("Arial", Font.BOLD, 14));
+		btnInventario.setFont(new Font("Arial", Font.BOLD, 16));
 		toolBar.add(btnInventario);
 		
 		JButton btnDevolucion = new JButton("Devolucion");
-		btnDevolucion.setFont(new Font("Arial", Font.BOLD, 14));
+		btnDevolucion.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/1415499004_Rotation.png")));
+		btnDevolucion.setFont(new Font("Arial", Font.BOLD, 16));
 		toolBar.add(btnDevolucion);
 		
 		JButton btnNewButton = new JButton("Reportes");
+		btnNewButton.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/1415499313_Computer_Analysis-48.png")));
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -133,5 +138,14 @@ public class frmPrincipal {
 		desktopPane_3.setBackground(Color.LIGHT_GRAY);
 		desktopPane_3.setBounds(0, 74, 1, 1);
 		frame.getContentPane().add(desktopPane_3);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 340, 606, -14);
+		frame.getContentPane().add(panel);
+		
+		JToolBar toolBar_1 = new JToolBar();
+		toolBar_1.setForeground(Color.GRAY);
+		toolBar_1.setBounds(0, 333, 87, 16);
+		frame.getContentPane().add(toolBar_1);
 	}
 }
