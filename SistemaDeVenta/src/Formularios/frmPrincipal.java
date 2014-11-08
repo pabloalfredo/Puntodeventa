@@ -89,14 +89,16 @@ public class frmPrincipal {
 		btnFacturar.setVerticalAlignment(SwingConstants.TOP);
 		btnFacturar.setHorizontalAlignment(SwingConstants.LEFT);
 		btnFacturar.setFont(new Font("Arial", Font.BOLD, 14));
-		btnFacturar.setIcon(new ImageIcon(frmPrincipal.class.getResource("/Recurso/1415496836_698568-icon-56-document-text-48.png")));
+		btnFacturar.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/1415496836_698568-icon-56-document-text-48.png")));
 		toolBar.add(btnFacturar);
 		
 		JButton btnInventario = new JButton("Inventario");
+		btnInventario.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/inventario.png")));
+		btnInventario.setFont(new Font("Arial", Font.BOLD, 14));
 		toolBar.add(btnInventario);
 		
 		JButton btnDevolucion = new JButton("Devolucion");
-		btnDevolucion.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnDevolucion.setFont(new Font("Arial", Font.BOLD, 14));
 		toolBar.add(btnDevolucion);
 		
 		JButton btnNewButton = new JButton("Reportes");
