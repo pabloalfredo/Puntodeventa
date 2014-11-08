@@ -15,11 +15,12 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
+import java.awt.Color;
+import javax.swing.BoxLayout;
 
 public class frmPrincipal {
 
 	private JFrame frame;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -86,7 +87,7 @@ public class frmPrincipal {
 		btnFacturar.setVerticalAlignment(SwingConstants.TOP);
 		btnFacturar.setHorizontalAlignment(SwingConstants.LEFT);
 		btnFacturar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnFacturar.setIcon(new ImageIcon("C:\\Users\\vladimir\\Desktop\\1415495743_new-24-48.png"));
+		btnFacturar.setIcon(new ImageIcon("C:\\Users\\vladimir\\Desktop\\1415496836_698568-icon-56-document-text-48.png"));
 		toolBar.add(btnFacturar);
 		
 		JButton btnInventario = new JButton("Inventario");
@@ -109,9 +110,20 @@ public class frmPrincipal {
 		desktopPane.setBounds(73, 184, 301, -68);
 		frame.getContentPane().add(desktopPane);
 		
-		textField = new JTextField();
-		textField.setBounds(271, 127, 86, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		JDesktopPane desktopPane_1 = new JDesktopPane();
+		desktopPane_1.setBackground(Color.GRAY);
+		desktopPane_1.setBounds(0, 74, 0, 0);
+		frame.getContentPane().add(desktopPane_1);
+		desktopPane_1.setLayout(new BoxLayout(desktopPane_1, BoxLayout.X_AXIS));
+		
+		JDesktopPane desktopPane_2 = new JDesktopPane();
+		desktopPane_2.setBackground(Color.GRAY);
+		desktopPane_2.setBounds(0, 62, 1, 1);
+		frame.getContentPane().add(desktopPane_2);
+		
+		JDesktopPane desktopPane_3 = new JDesktopPane();
+		desktopPane_3.setBackground(Color.LIGHT_GRAY);
+		desktopPane_3.setBounds(0, 74, 1, 1);
+		frame.getContentPane().add(desktopPane_3);
 	}
 }
