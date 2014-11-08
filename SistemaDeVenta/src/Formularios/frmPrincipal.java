@@ -54,7 +54,7 @@ public class frmPrincipal {
 		JMenu mnConsultas = new JMenu("Consultas");
 		menuBar.add(mnConsultas);
 		
-		JMenuItem mntmE = new JMenuItem("e");
+		JMenuItem mntmE = new JMenuItem("Producto");
 		mnConsultas.add(mntmE);
 	}
 
