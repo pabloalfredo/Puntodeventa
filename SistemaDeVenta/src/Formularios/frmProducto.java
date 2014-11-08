@@ -59,6 +59,7 @@ public class frmProducto extends JFrame {
 	 * Create the frame.
 	 */
 	public frmProducto() {
+		setModalExclusionType(ModalExclusionType.TOOLKIT_EXCLUDE);
 		setResizable(false);
 		setTitle("Crear Produtos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

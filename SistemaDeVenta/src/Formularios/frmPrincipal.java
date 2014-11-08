@@ -54,7 +54,7 @@ public class frmPrincipal {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 612, 408);
+		frame.setBounds(100, 100, 1034, 621);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -90,7 +90,7 @@ public class frmPrincipal {
 		frame.getContentPane().setLayout(null);
 		
 		JToolBar toolBar = new JToolBar();
-		toolBar.setBounds(0, 0, 596, 63);
+		toolBar.setBounds(0, 0, 545, 57);
 		frame.getContentPane().add(toolBar);
 		
 		JButton btnFacturar = new JButton("Facturar");
@@ -154,5 +154,9 @@ public class frmPrincipal {
 		toolBar_1.setForeground(Color.GRAY);
 		toolBar_1.setBounds(0, 333, 87, 16);
 		frame.getContentPane().add(toolBar_1);
+		
+		JDesktopPane desktopPane_4 = new JDesktopPane();
+		desktopPane_4.setBounds(-1, 264, 550, -201);
+		frame.getContentPane().add(desktopPane_4);
 	}
 }
