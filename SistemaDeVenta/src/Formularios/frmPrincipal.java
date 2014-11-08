@@ -56,6 +56,9 @@ public class frmPrincipal {
 		
 		JMenuItem mntmE = new JMenuItem("Producto");
 		mnConsultas.add(mntmE);
+		
+		JMenu menu = new JMenu("");
+		menuBar.add(menu);
 	}
 
 }
