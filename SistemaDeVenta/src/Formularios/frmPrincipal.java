@@ -6,6 +6,14 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JToolBar;
+import javax.swing.JButton;
+import javax.swing.JSeparator;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JDesktopPane;
 
 public class frmPrincipal {
 
@@ -39,7 +47,7 @@ public class frmPrincipal {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 612, 408);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -59,6 +67,44 @@ public class frmPrincipal {
 		
 		JMenu menu = new JMenu("");
 		menuBar.add(menu);
+		
+		JMenu mnReportes = new JMenu("Reportes");
+		menuBar.add(mnReportes);
+		
+		JMenu mnAyuda = new JMenu("Ayuda");
+		menuBar.add(mnAyuda);
+		frame.getContentPane().setLayout(null);
+		
+		JToolBar toolBar = new JToolBar();
+		toolBar.setBounds(0, 0, 596, 63);
+		frame.getContentPane().add(toolBar);
+		
+		JButton btnFacturar = new JButton("Facturar");
+		btnFacturar.setToolTipText("Facturar");
+		btnFacturar.setVerticalAlignment(SwingConstants.TOP);
+		btnFacturar.setHorizontalAlignment(SwingConstants.LEFT);
+		btnFacturar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnFacturar.setIcon(new ImageIcon("C:\\Users\\vladimir\\Desktop\\1415495743_new-24-48.png"));
+		toolBar.add(btnFacturar);
+		
+		JButton btnInventario = new JButton("Inventario");
+		toolBar.add(btnInventario);
+		
+		JButton btnDevolucion = new JButton("Devolucion");
+		btnDevolucion.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		toolBar.add(btnDevolucion);
+		
+		JButton btnNewButton = new JButton("New button");
+		toolBar.add(btnNewButton);
+		
+		JSeparator separator_1 = new JSeparator();
+		toolBar.add(separator_1);
+		
+		JSeparator separator = new JSeparator();
+		toolBar.add(separator);
+		
+		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane.setBounds(73, 184, 301, -68);
+		frame.getContentPane().add(desktopPane);
 	}
-
 }
