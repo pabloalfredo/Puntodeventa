@@ -7,7 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+<<<<<<< HEAD
 import javax.swing.JTextField;
+=======
+>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
 
 public class frmTipoProducto extends JFrame {
 
@@ -42,6 +45,7 @@ public class frmTipoProducto extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("New button");
+<<<<<<< HEAD
 		btnNewButton.setBounds(39, 96, 89, 23);
 		contentPane.add(btnNewButton);
 		
@@ -49,6 +53,10 @@ public class frmTipoProducto extends JFrame {
 		textField.setBounds(28, 53, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
+=======
+		btnNewButton.setBounds(147, 95, 107, 79);
+		contentPane.add(btnNewButton);
+>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
 	}
 
 }
