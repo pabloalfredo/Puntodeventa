@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
+import javax.swing.JMenu;
 
 public class frmPrincipal {
 
@@ -42,6 +43,15 @@ public class frmPrincipal {
 		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
+		
+		JMenu mnSistema = new JMenu("Sistema");
+		menuBar.add(mnSistema);
+		
+		JMenu mnMantenimiento = new JMenu("Mantenimiento");
+		menuBar.add(mnMantenimiento);
+		
+		JMenu mnConsultas = new JMenu("Consultas");
+		menuBar.add(mnConsultas);
 	}
 
 }
