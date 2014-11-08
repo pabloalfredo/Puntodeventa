@@ -11,6 +11,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JButton;
 
 public class frmProducto extends JFrame {
 
@@ -42,8 +43,8 @@ public class frmProducto extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu menu = new JMenu("New menu");
-		menuBar.add(menu);
+		JMenu mnFile = new JMenu("File");
+		menuBar.add(mnFile);
 		
 		JMenuItem mntmAbrir = new JMenuItem("Abrir");
 		mntmAbrir.addActionListener(new ActionListener() {
@@ -51,11 +52,15 @@ public class frmProducto extends JFrame {
 				
 			}
 		});
-		menu.add(mntmAbrir);
+		mnFile.add(mntmAbrir);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(162, 89, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 
 }
