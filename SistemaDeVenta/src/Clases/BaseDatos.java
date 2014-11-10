@@ -1,7 +1,11 @@
 package Clases;
 
+import java.awt.Component;
+import java.awt.Window;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import javax.swing.JFrame;
 
 import Formularios.frmPrincipal;
 
@@ -9,7 +13,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.ResultSet;
 
-public class BaseDatos {
+public class BaseDatos  extends JFrame{
 	
 	private static Connection con; //Variable tipo conexion para retornar una conexion
     private static ResultSet rs = null;//para acceder a los resultados de las consultas
@@ -46,10 +50,7 @@ public class BaseDatos {
 		  
 		    System.out.println(tipo);
 			frmPrincipal menu = new frmPrincipal(tipo);
-			//menu.setVisible(true);
-			
-		
-		 
+			menu.setVisible(true);
 
 	   }
 	   

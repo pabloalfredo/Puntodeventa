@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.BoxLayout;
 
-public class frmPrincipal {
+public class frmPrincipal extends JFrame{
 
 	private JFrame frame;
 	static String tipoUsuario;
@@ -127,4 +127,8 @@ public class frmPrincipal {
 		desktopPane_3.setBounds(0, 74, 1, 1);
 		frame.getContentPane().add(desktopPane_3);
 	}
+	public void mostrar()
+    {
+        setVisible(true);
+    }
 }
