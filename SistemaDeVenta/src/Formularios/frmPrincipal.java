@@ -17,15 +17,21 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.BoxLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.ScrollPane;
+import java.awt.event.ContainerAdapter;
+import java.awt.event.ContainerEvent;
 
 public class frmPrincipal extends JFrame{
 
 	private JFrame frame;
-	static String tipoUsuario;
+	String tipoUsuario;
 
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,11 +44,19 @@ public class frmPrincipal extends JFrame{
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the application.
 	 */
+//<<<<<<< HEAD
 	public frmPrincipal(String tipo) {
+		
+		this.tipoUsuario = tipo;
+	}
+
+	public frmPrincipal() {
+
 		initialize();
 	}
 
@@ -51,7 +65,12 @@ public class frmPrincipal extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 612, 408);
+		frame.getContentPane().addContainerListener(new ContainerAdapter() {
+			@Override
+			public void componentAdded(ContainerEvent arg0) {
+			}
+		});
+		frame.setBounds(100, 100, 1034, 621);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -67,6 +86,13 @@ public class frmPrincipal extends JFrame{
 		menuBar.add(mnConsultas);
 		
 		JMenuItem mntmE = new JMenuItem("Producto");
+		mntmE.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmProducto Producto = new frmProducto();
+				Producto.setVisible(true);
+				
+			}
+		});
 		mnConsultas.add(mntmE);
 		
 		JMenu menu = new JMenu("");
@@ -80,25 +106,34 @@ public class frmPrincipal extends JFrame{
 		frame.getContentPane().setLayout(null);
 		
 		JToolBar toolBar = new JToolBar();
-		toolBar.setBounds(0, 0, 596, 63);
+		toolBar.setBounds(0, 0, 545, 57);
 		frame.getContentPane().add(toolBar);
 		
 		JButton btnFacturar = new JButton("Facturar");
 		btnFacturar.setToolTipText("Facturar");
 		btnFacturar.setVerticalAlignment(SwingConstants.TOP);
 		btnFacturar.setHorizontalAlignment(SwingConstants.LEFT);
-		btnFacturar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnFacturar.setIcon(new ImageIcon("C:\\Users\\vladimir\\Desktop\\1415496836_698568-icon-56-document-text-48.png"));
+		btnFacturar.setFont(new Font("Arial", Font.BOLD, 16));
+		btnFacturar.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/1415496836_698568-icon-56-document-text-48.png")));
 		toolBar.add(btnFacturar);
 		
 		JButton btnInventario = new JButton("Inventario");
+		btnInventario.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/inventario.png")));
+		btnInventario.setFont(new Font("Arial", Font.BOLD, 16));
 		toolBar.add(btnInventario);
 		
 		JButton btnDevolucion = new JButton("Devolucion");
-		btnDevolucion.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnDevolucion.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/1415499004_Rotation.png")));
+		btnDevolucion.setFont(new Font("Arial", Font.BOLD, 16));
 		toolBar.add(btnDevolucion);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Reportes");
+		btnNewButton.setIcon(new ImageIcon(frmPrincipal.class.getResource("/recursos/frmprincipal/1415499313_Computer_Analysis-48.png")));
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 16));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		toolBar.add(btnNewButton);
 		
 		JSeparator separator_1 = new JSeparator();
@@ -126,9 +161,30 @@ public class frmPrincipal extends JFrame{
 		desktopPane_3.setBackground(Color.LIGHT_GRAY);
 		desktopPane_3.setBounds(0, 74, 1, 1);
 		frame.getContentPane().add(desktopPane_3);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 340, 606, -14);
+		frame.getContentPane().add(panel);
+		
+		JToolBar toolBar_1 = new JToolBar();
+		toolBar_1.setForeground(Color.GRAY);
+		toolBar_1.setBounds(0, 333, 87, 16);
+		frame.getContentPane().add(toolBar_1);
+		
+		JDesktopPane desktopPane_4 = new JDesktopPane();
+		desktopPane_4.setBounds(-1, 264, 550, -201);
+		frame.getContentPane().add(desktopPane_4);
+		
+		if(tipoUsuario.equals("ADMINISTRADOR"))
+		{
+			btnDevolucion.setEnabled(true);
+		}
+		if(tipoUsuario.equals("CAJERO"))
+		{
+			btnDevolucion.setEnabled(false);
+		}
+		
+		
 	}
-	public void mostrar()
-    {
-        setVisible(true);
-    }
+	
 }

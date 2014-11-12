@@ -102,7 +102,7 @@ public class frmAutenticacion {
 		txtUsuario = new JTextField();
 		txtUsuario.setToolTipText("Ingrese su Nombre de Usuario");
 		txtUsuario.setFont(new Font("SansSerif", Font.BOLD, 12));
-		txtUsuario.setBounds(208, 45, 141, 28);
+		txtUsuario.setBounds(208, 45, 158, 28);
 		frame.getContentPane().add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
@@ -110,13 +110,13 @@ public class frmAutenticacion {
 		txtPass = new JPasswordField();
 		txtPass.setToolTipText("Ingrese su Contrasena");
 		txtPass.setFont(new Font("SansSerif", Font.BOLD, 12));
-		txtPass.setBounds(208, 84, 141, 28);
+		txtPass.setBounds(208, 84, 158, 28);
 		frame.getContentPane().add(txtPass);
 		
 		////cracion del boton aceptar
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setToolTipText("Hacer clic para entrar");
-		btnAceptar.setIcon(new ImageIcon("C:\\Users\\pabloalfredo\\Desktop\\fd.png"));
+		btnAceptar.setIcon(new ImageIcon(frmAutenticacion.class.getResource("/recursos/frmprincipal/Aceptar (2).png")));
 		
 		btnAceptar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
@@ -127,7 +127,7 @@ public class frmAutenticacion {
 					BaseDatos.autenticarUsuario(txtUsuario.getText(), txtPass.getText());
 					
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -144,7 +144,7 @@ public class frmAutenticacion {
 		btnCancelar.setToolTipText("Hacer clic para cancelar");
 		btnCancelar.setIcon(new ImageIcon(frmAutenticacion.class.getResource("/com/sun/java/swing/plaf/windows/icons/Error.gif")));
 		btnCancelar.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btnCancelar.setBounds(235, 139, 114, 52);
+		btnCancelar.setBounds(252, 139, 114, 52);
 		frame.getContentPane().add(btnCancelar);
 	}
 }
