@@ -82,6 +82,16 @@ public class frmPrincipal extends JFrame{
 		JMenu mnMantenimiento = new JMenu("Mantenimiento");
 		menuBar.add(mnMantenimiento);
 		
+		JMenuItem mntmAgregarTipoDe = new JMenuItem("Agregar Tipo de Producto");
+		mntmAgregarTipoDe.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				frmTipoProducto frm = new frmTipoProducto();
+				frm.setVisible(true);
+			}
+		});
+		mnMantenimiento.add(mntmAgregarTipoDe);
+		
 		JMenu mnConsultas = new JMenu("Consultas");
 		menuBar.add(mnConsultas);
 		
@@ -186,5 +196,4 @@ public class frmPrincipal extends JFrame{
 		
 		
 	}
-	
 }
