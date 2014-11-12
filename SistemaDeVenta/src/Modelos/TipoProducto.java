@@ -16,6 +16,7 @@ public class TipoProducto {
 	}
 	public String getDescripcion() {
 		return Descripcion;
+		dd
 	}
 
 
