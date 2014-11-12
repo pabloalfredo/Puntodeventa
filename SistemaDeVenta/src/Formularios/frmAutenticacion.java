@@ -68,10 +68,10 @@ public class frmAutenticacion {
 		frame.getContentPane().setLayout(null);
 		
 		//// etiquetas del loguin
-		JLabel lblControlDeUsuario = new JLabel("Control de Usuarios GRENSOFT");
+		JLabel lblControlDeUsuario = new JLabel("Loguin");
 		lblControlDeUsuario.setForeground(new Color(25, 25, 112));
-		lblControlDeUsuario.setFont(new Font("Arial", Font.BOLD, 16));
-		lblControlDeUsuario.setBounds(70, 6, 249, 16);
+		lblControlDeUsuario.setFont(new Font("Arial", Font.BOLD, 18));
+		lblControlDeUsuario.setBounds(145, 6, 89, 16);
 		frame.getContentPane().add(lblControlDeUsuario);
 		
 		//////// codigo del frame para la imagen del logo
