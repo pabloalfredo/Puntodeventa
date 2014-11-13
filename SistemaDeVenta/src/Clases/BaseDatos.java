@@ -22,7 +22,7 @@ public class BaseDatos {
     
     public void  open(){
         try{
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.jdbc.Driver").newInstance(); //importar drive
             cn = DriverManager.getConnection(URL, USUARIO, PASSWORD);        
         }catch(Exception ex){
             Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE,null,ex);
