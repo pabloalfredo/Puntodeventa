@@ -1,33 +1,25 @@
 package Formularios;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 
 import java.awt.Font;
 
-import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-
-import Clases.mtdTipoProducto;
-import Modelos.TipoProducto;
+import javax.swing.ImageIcon;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class frmTipoProducto extends JFrame {
+public class frmTipoProducto {
 
-	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField txtDescripcion;
+	private JFrame frmAgregarTipoDe;
+	private JTextField IdTipoProducto;
+	private JTextField Descripcion;
 
 	/**
 	 * Launch the application.
@@ -36,8 +28,8 @@ public class frmTipoProducto extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frmTipoProducto frame = new frmTipoProducto();
-					frame.setVisible(true);
+					frmTipoProducto window = new frmTipoProducto();
+					window.frmAgregarTipoDe.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -46,149 +38,68 @@ public class frmTipoProducto extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the application.
 	 */
 	public frmTipoProducto() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 360, 207);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmAgregarTipoDe = new JFrame();
+		frmAgregarTipoDe.setResizable(false);
+		frmAgregarTipoDe.setTitle("Agregar Tipo de Producto");
+		frmAgregarTipoDe.setBounds(100, 100, 298, 233);
+		frmAgregarTipoDe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmAgregarTipoDe.getContentPane().setLayout(null);
 		
-		JLabel lblAgregarTipoDe = new JLabel("Agregar Tipo de Producto");
-		lblAgregarTipoDe.setFont(new Font("Tahoma", Font.BOLD, 16));
+		JLabel lblAgregarTipoProducto = new JLabel("Agregar Tipo Producto");
+		lblAgregarTipoProducto.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblAgregarTipoProducto.setBounds(61, 0, 169, 24);
+		frmAgregarTipoDe.getContentPane().add(lblAgregarTipoProducto);
 		
-		JLabel lblId = new JLabel("ID");
+		JLabel lblNewLabel = new JLabel("ID ");
+		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 12));
+		lblNewLabel.setBounds(28, 54, 55, 16);
+		frmAgregarTipoDe.getContentPane().add(lblNewLabel);
 		
 		JLabel lblDescripcion = new JLabel("Descripcion");
+		lblDescripcion.setFont(new Font("SansSerif", Font.BOLD, 12));
+		lblDescripcion.setBounds(28, 96, 76, 16);
+		frmAgregarTipoDe.getContentPane().add(lblDescripcion);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
+		IdTipoProducto = new JTextField();
+		IdTipoProducto.setBounds(114, 48, 122, 28);
+		frmAgregarTipoDe.getContentPane().add(IdTipoProducto);
+		IdTipoProducto.setColumns(10);
 		
-		txtDescripcion = new JTextField();
-		txtDescripcion.setColumns(10);
+		Descripcion = new JTextField();
+		Descripcion.setColumns(10);
+		Descripcion.setBounds(114, 90, 122, 28);
+		frmAgregarTipoDe.getContentPane().add(Descripcion);
 		
 		final JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				//frmTipoProducto textoTextfield = new frmTipoProducto();
-				
-				//String Descripcion = textoTextfield.obtenerDescripcionTipoProducto();
-				
-				JOptionPane.showMessageDialog(btnAceptar,"Eggs are not supposed to be green.",null, 1);
-				
-				/*
-				TipoProducto producto = new TipoProducto();
-				producto.setDescripcion(txtDescripcion.toString());
-				
-				//mtdTipoProducto mensaje = new mtdTipoProducto();
-				//mensaje.AgregarTipoProducto();
-				
-				String Descri = producto.getDescripcion();
-				
-				*/
-				
+				JOptionPane.showMessageDialog(btnAceptar, IdTipoProducto.getText(), "agregado correctamente", 0);
 			}
 		});
-		
-		
-		
-		
+		btnAceptar.setFont(new Font("SansSerif", Font.BOLD, 12));
+		btnAceptar.setIcon(new ImageIcon(frmTipoProducto.class.getResource("/recursos/frmprincipal/Aceptar (2).png")));
+		btnAceptar.setBounds(28, 143, 107, 38);
+		frmAgregarTipoDe.getContentPane().add(btnAceptar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
-		
-//<<<<<<< HEAD
-		JButton button = new JButton("Aceptar");
-//=======
-		JButton btnAceptar_1 = new JButton("Aceptar 2");
-		btnAceptar_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(btnAceptar,"Eggs are not supposed to be green.",null, 1);
-			}
-		});
-//>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-//<<<<<<< HEAD
-//=======
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(32)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblDescripcion)
-						.addComponent(lblId))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtDescripcion, GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-					.addGap(1)
-					.addComponent(btnAceptar_1)
-					.addGap(31))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(62)
-					.addComponent(lblAgregarTipoDe)
-					.addContainerGap(62, Short.MAX_VALUE))
-//>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(58)
-					.addComponent(btnAceptar)
-					.addGap(66)
-					.addComponent(btnCancelar)
-					.addContainerGap(64, Short.MAX_VALUE))
-//<<<<<<< HEAD
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(62)
-					.addComponent(lblAgregarTipoDe)
-					.addContainerGap(62, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(32)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(button, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblDescripcion)
-								.addComponent(lblId))
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtDescripcion, GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-							.addGap(111))))
-//=======
-//>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblAgregarTipoDe)
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblId)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnAceptar_1))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblDescripcion)
-						.addComponent(txtDescripcion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnCancelar)
-						.addComponent(btnAceptar))
-//<<<<<<< HEAD
-					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(button))//
-//=======
-					//.addContainerGap(29, Short.MAX_VALUE));
-//>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
-		//);
-		contentPane.setLayout(gl_contentPane);
+		btnCancelar.setIcon(new ImageIcon(frmTipoProducto.class.getResource("/com/sun/java/swing/plaf/windows/icons/Error.gif")));
+		btnCancelar.setFont(new Font("SansSerif", Font.BOLD, 12));
+		btnCancelar.setBounds(145, 143, 114, 38);
+		frmAgregarTipoDe.getContentPane().add(btnCancelar);
 	}
-	
-	public String obtenerDescripcionTipoProducto() {
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
 		
-		return txtDescripcion.getText(); 
 	}
 }

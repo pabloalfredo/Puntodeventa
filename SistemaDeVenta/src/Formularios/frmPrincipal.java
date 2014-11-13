@@ -1,28 +1,47 @@
 package Formularios;
 
 import java.awt.EventQueue;
+import java.awt.Window;
 
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
 import javax.swing.JButton;
 import javax.swing.JSeparator;
 import javax.swing.ImageIcon;
+
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
 import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
+
 import java.awt.Color;
+
 import javax.swing.BoxLayout;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.ScrollPane;
 import java.awt.event.ContainerAdapter;
 import java.awt.event.ContainerEvent;
+import java.awt.BorderLayout;
 
+import javax.swing.JProgressBar;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.TitledBorder;
+import javax.swing.JLayeredPane;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import net.miginfocom.swing.MigLayout;
+
+@SuppressWarnings("serial")
 public class frmPrincipal extends JFrame{
 
 	private JFrame frame;
@@ -50,10 +69,7 @@ public class frmPrincipal extends JFrame{
 	 * Create the application.
 	 */
 
-	public frmPrincipal(String tipo) {
-		
-		this.tipoUsuario = tipo;
-	}
+	
 
 	public frmPrincipal() {
 
@@ -79,6 +95,15 @@ public class frmPrincipal extends JFrame{
 		JMenu mnSistema = new JMenu("Sistema");
 		menuBar.add(mnSistema);
 		
+		JMenuItem mntmCambiar = new JMenuItem("Cambiar de Usuario");
+		mntmCambiar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "otro formulario");
+				
+			}
+		});
+		mnSistema.add(mntmCambiar);
+		
 		JMenuItem mntmSalir = new JMenuItem("Salir");
 		mnSistema.add(mntmSalir);
 		
@@ -87,25 +112,27 @@ public class frmPrincipal extends JFrame{
 		
 		JMenuItem mntmAgregarTipoDe = new JMenuItem("Agregar Tipo de Producto");
 		mntmAgregarTipoDe.addActionListener(new ActionListener() {
+		
 			public void actionPerformed(ActionEvent arg0) {
 				
-				frmTipoProducto frm = new frmTipoProducto();
-				frm.setVisible(true);
 			}
 		});
+		
+		JMenuItem mntmAgregarUnProducto = new JMenuItem("Agregar un Producto");
+		mntmAgregarUnProducto.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		mnMantenimiento.add(mntmAgregarUnProducto);
 		mnMantenimiento.add(mntmAgregarTipoDe);
 		
 		JMenu mnConsultas = new JMenu("Consultas");
 		menuBar.add(mnConsultas);
 		
 		JMenuItem mntmE = new JMenuItem("Producto");
-		mntmE.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmProducto Producto = new frmProducto();
-				Producto.setVisible(true);
-				
-			}
-		});
+	
 		mnConsultas.add(mntmE);
 		
 		JMenu menu = new JMenu("");
@@ -116,11 +143,16 @@ public class frmPrincipal extends JFrame{
 		
 		JMenu mnAyuda = new JMenu("Ayuda");
 		menuBar.add(mnAyuda);
-		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane.setBackground(Color.LIGHT_GRAY);
+		frame.getContentPane().add(desktopPane);
+		desktopPane.setLayout(null);
 		
 		JToolBar toolBar = new JToolBar();
-		toolBar.setBounds(0, 0, 545, 57);
-		frame.getContentPane().add(toolBar);
+		toolBar.setBounds(7, 0, 1004, 62);
+		desktopPane.add(toolBar);
 		
 		JButton btnFacturar = new JButton("Facturar");
 		btnFacturar.setToolTipText("Facturar");
@@ -149,44 +181,9 @@ public class frmPrincipal extends JFrame{
 		});
 		toolBar.add(btnNewButton);
 		
-		JSeparator separator_1 = new JSeparator();
-		toolBar.add(separator_1);
-		
-		JSeparator separator = new JSeparator();
-		toolBar.add(separator);
-		
-		JDesktopPane desktopPane = new JDesktopPane();
-		desktopPane.setBounds(73, 184, 301, -68);
-		frame.getContentPane().add(desktopPane);
-		
-		JDesktopPane desktopPane_1 = new JDesktopPane();
-		desktopPane_1.setBackground(Color.GRAY);
-		desktopPane_1.setBounds(0, 74, 0, 0);
-		frame.getContentPane().add(desktopPane_1);
-		desktopPane_1.setLayout(new BoxLayout(desktopPane_1, BoxLayout.X_AXIS));
-		
-		JDesktopPane desktopPane_2 = new JDesktopPane();
-		desktopPane_2.setBackground(Color.GRAY);
-		desktopPane_2.setBounds(0, 62, 1, 1);
-		frame.getContentPane().add(desktopPane_2);
-		
-		JDesktopPane desktopPane_3 = new JDesktopPane();
-		desktopPane_3.setBackground(Color.LIGHT_GRAY);
-		desktopPane_3.setBounds(0, 74, 1, 1);
-		frame.getContentPane().add(desktopPane_3);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(0, 340, 606, -14);
-		frame.getContentPane().add(panel);
-		
-		JToolBar toolBar_1 = new JToolBar();
-		toolBar_1.setForeground(Color.GRAY);
-		toolBar_1.setBounds(0, 333, 87, 16);
-		frame.getContentPane().add(toolBar_1);
-		
-		JDesktopPane desktopPane_4 = new JDesktopPane();
-		desktopPane_4.setBounds(-1, 264, 550, -201);
-		frame.getContentPane().add(desktopPane_4);
+		JLabel label = new JLabel("");
+		label.setBounds(7, 68, 1004, 437);
+		desktopPane.add(label);
 	
 		
 	}

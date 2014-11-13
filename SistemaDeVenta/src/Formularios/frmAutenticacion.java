@@ -13,12 +13,14 @@ import java.awt.Font;
 import javax.swing.UIManager;
 import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
 import Clases.BaseDatos;
+import Clases.DBLoguin;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
@@ -71,7 +73,7 @@ public class frmAutenticacion {
 		JLabel lblControlDeUsuario = new JLabel("Loguin");
 		lblControlDeUsuario.setForeground(new Color(25, 25, 112));
 		lblControlDeUsuario.setFont(new Font("Arial", Font.BOLD, 18));
-		lblControlDeUsuario.setBounds(145, 6, 89, 16);
+		lblControlDeUsuario.setBounds(145, 6, 89, 33);
 		frame.getContentPane().add(lblControlDeUsuario);
 		
 		//////// codigo del frame para la imagen del logo
@@ -115,6 +117,12 @@ public class frmAutenticacion {
 		
 		////cracion del boton aceptar
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DBLoguin loguin = new DBLoguin();
+				loguin.Acceder(txtUsuario.getText(), txtPass.getText());
+			}
+		});
 		btnAceptar.setToolTipText("Hacer clic para entrar");
 		btnAceptar.setIcon(new ImageIcon(frmAutenticacion.class.getResource("/recursos/frmprincipal/Aceptar (2).png")));
 		
@@ -125,10 +133,19 @@ public class frmAutenticacion {
 		
 		//// codigo para crear el boton cancelar
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DBLoguin logu = new DBLoguin();
+				logu.Acceder(txtUsuario.getText(), txtPass.getText());
+				
+			}
+		});
 		btnCancelar.setToolTipText("Hacer clic para cancelar");
 		btnCancelar.setIcon(new ImageIcon(frmAutenticacion.class.getResource("/com/sun/java/swing/plaf/windows/icons/Error.gif")));
 		btnCancelar.setFont(new Font("SansSerif", Font.BOLD, 12));
 		btnCancelar.setBounds(252, 139, 114, 52);
 		frame.getContentPane().add(btnCancelar);
 	}
+
+	
 }
