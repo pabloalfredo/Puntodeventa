@@ -98,16 +98,45 @@ public class frmTipoProducto extends JFrame {
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		
+//<<<<<<< HEAD
 		JButton button = new JButton("Aceptar");
+//=======
+		JButton btnAceptar_1 = new JButton("Aceptar 2");
+		btnAceptar_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(btnAceptar,"Eggs are not supposed to be green.",null, 1);
+			}
+		});
+//>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
+//<<<<<<< HEAD
+//=======
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(32)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblDescripcion)
+						.addComponent(lblId))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtDescripcion, GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+					.addGap(1)
+					.addComponent(btnAceptar_1)
+					.addGap(31))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(62)
+					.addComponent(lblAgregarTipoDe)
+					.addContainerGap(62, Short.MAX_VALUE))
+//>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(58)
 					.addComponent(btnAceptar)
 					.addGap(66)
 					.addComponent(btnCancelar)
 					.addContainerGap(64, Short.MAX_VALUE))
+//<<<<<<< HEAD
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(62)
 					.addComponent(lblAgregarTipoDe)
@@ -127,6 +156,8 @@ public class frmTipoProducto extends JFrame {
 								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(txtDescripcion, GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
 							.addGap(111))))
+//=======
+//>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -136,7 +167,8 @@ public class frmTipoProducto extends JFrame {
 					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblId)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnAceptar_1))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblDescripcion)
@@ -145,9 +177,13 @@ public class frmTipoProducto extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnCancelar)
 						.addComponent(btnAceptar))
+//<<<<<<< HEAD
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(button))
-		);
+					.addComponent(button))//
+//=======
+					//.addContainerGap(29, Short.MAX_VALUE));
+//>>>>>>> branch 'alfredo' of https://github.com/pabloalfredo/Puntodeventa
+		//);
 		contentPane.setLayout(gl_contentPane);
 	}
 	
