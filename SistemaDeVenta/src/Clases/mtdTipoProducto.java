@@ -22,9 +22,10 @@ public class mtdTipoProducto {
 		
         BaseDatos conn = new BaseDatos();
         conn.open();
-        conn.execute(sql);
+        conn.execute(sql);uu
         conn.close();
 		*/
+		
 	}
 
 	
