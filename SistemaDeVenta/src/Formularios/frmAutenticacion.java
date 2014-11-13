@@ -118,23 +118,7 @@ public class frmAutenticacion {
 		btnAceptar.setToolTipText("Hacer clic para entrar");
 		btnAceptar.setIcon(new ImageIcon(frmAutenticacion.class.getResource("/recursos/frmprincipal/Aceptar (2).png")));
 		
-		btnAceptar.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
-			public void actionPerformed(ActionEvent arg0) 
-			{		
-				try {
-					
-					BaseDatos.autenticarUsuario(txtUsuario.getText(), txtPass.getText());
-					
-				} catch (SQLException e) {
-					
-					e.printStackTrace();
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});
+	
 		btnAceptar.setFont(new Font("SansSerif", Font.BOLD, 12));
 		btnAceptar.setBounds(120, 139, 114, 52);
 		frame.getContentPane().add(btnAceptar);
