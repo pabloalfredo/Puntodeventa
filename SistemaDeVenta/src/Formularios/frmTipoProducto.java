@@ -4,21 +4,30 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
+import Clases.mtdTipoProducto;
+import Modelos.TipoProducto;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class frmTipoProducto extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtDescripcion;
 
 	/**
 	 * Launch the application.
@@ -56,35 +65,68 @@ public class frmTipoProducto extends JFrame {
 		textField = new JTextField();
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		txtDescripcion = new JTextField();
+		txtDescripcion.setColumns(10);
 		
-		JButton btnAceptar = new JButton("Aceptar");
+		final JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				//frmTipoProducto textoTextfield = new frmTipoProducto();
+				
+				//String Descripcion = textoTextfield.obtenerDescripcionTipoProducto();
+				
+				JOptionPane.showMessageDialog(btnAceptar,"Eggs are not supposed to be green.",null, 1);
+				
+				/*
+				TipoProducto producto = new TipoProducto();
+				producto.setDescripcion(txtDescripcion.toString());
+				
+				//mtdTipoProducto mensaje = new mtdTipoProducto();
+				//mensaje.AgregarTipoProducto();
+				
+				String Descri = producto.getDescripcion();
+				
+				*/
+				
+			}
+		});
+		
+		
+		
+		
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		
+		JButton button = new JButton("Aceptar");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(32)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblDescripcion)
-						.addComponent(lblId))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_1, GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE))
-					.addGap(111))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(63)
+					.addGap(58)
 					.addComponent(btnAceptar)
-					.addGap(61)
+					.addGap(66)
 					.addComponent(btnCancelar)
-					.addContainerGap(92, Short.MAX_VALUE))
+					.addContainerGap(64, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(62)
 					.addComponent(lblAgregarTipoDe)
-					.addContainerGap(104, Short.MAX_VALUE))
+					.addContainerGap(62, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(32)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(button, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblDescripcion)
+								.addComponent(lblId))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtDescripcion, GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+							.addGap(111))))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -98,13 +140,19 @@ public class frmTipoProducto extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblDescripcion)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtDescripcion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnCancelar)
 						.addComponent(btnAceptar))
-					.addContainerGap())
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(button))
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+	
+	public String obtenerDescripcionTipoProducto() {
+		
+		return txtDescripcion.getText(); 
 	}
 }

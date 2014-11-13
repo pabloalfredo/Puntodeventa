@@ -31,12 +31,12 @@ public class frmPrincipal extends JFrame{
 	/**
 	 * Launch the application.
 	 */
-	/*
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frmPrincipal window = new frmPrincipal(tipoUsuario);
+					frmPrincipal window = new frmPrincipal();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,12 +44,12 @@ public class frmPrincipal extends JFrame{
 			}
 		});
 	}
-	*/
+
 
 	/**
 	 * Create the application.
 	 */
-//<<<<<<< HEAD
+
 	public frmPrincipal(String tipo) {
 		
 		this.tipoUsuario = tipo;
@@ -174,16 +174,7 @@ public class frmPrincipal extends JFrame{
 		JDesktopPane desktopPane_4 = new JDesktopPane();
 		desktopPane_4.setBounds(-1, 264, 550, -201);
 		frame.getContentPane().add(desktopPane_4);
-		
-		if(tipoUsuario.equals("ADMINISTRADOR"))
-		{
-			btnDevolucion.setEnabled(true);
-		}
-		if(tipoUsuario.equals("CAJERO"))
-		{
-			btnDevolucion.setEnabled(false);
-		}
-		
+	
 		
 	}
 	
